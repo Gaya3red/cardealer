@@ -1,0 +1,71 @@
+package car;
+import java.util.*;
+
+
+
+public class Cars {
+	public static void main(String[] args) {
+		String[] carname = {"Polo Trendline","Polo Highline","Virtus Trendline","Virtus Highline","Taigun Trendline","Tagiun Trendline","Taigun Highline","Taigun Topline"};
+	try {
+		Scanner SC = new Scanner(System.in);
+		for(int i=0;i<carname.length;i++)
+		{
+		System.out.println(carname[i]+" ");
+		}
+		System.out.println("choose a car");
+		String cs = SC.nextLine();
+		int carrank=0;
+		int carcost=0;
+		System.out.println(cs);
+		switch(cs) {
+		case "Polo Trendline":
+			carrank=0;
+			carcost=870000;
+			break;
+		case "Polo highline":
+			carrank=1;
+			carcost=1009000;
+			break;
+		case "Polo line":
+			carrank=2;
+			carcost=1105000;
+			break;
+		case "Virtus Trendline":
+			carrank=3;
+			carcost=1105000;
+			break;
+		case "virtus highline":
+			carrank=4;
+			carcost=1308000;
+			break;
+		case "taigun trendline":
+			carrank=5;
+			carcost=1489000;
+			break;
+		case "taigun highline":
+			carrank=6;
+			carcost=1542000;
+			break;
+		case "Taigun Topline": 
+			carrank=7;
+			carcost=1771000;
+			break;
+		}
+		int Check=0;
+		for (int i =0; i<carname.length;i++)
+		{
+			if(carname[i] == carname[carcost]) {
+				Check = -1;
+				break;
+			}
+			if(carrank >7|| carrank<=0)
+			{
+				System.err.println("car name is wrong, please enter the correct car name");
+			}
+			System.out.println("car has been selected:" +carname[carrank-1]);
+		    System.out.println("Showroom cost" +carcost);
+		    cardetails cd =new cardetails(carcost);
+		    System.out.println(cd.addrto(carcost));
+		}
+  }
+}
